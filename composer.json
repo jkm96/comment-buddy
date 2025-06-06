@@ -1,5 +1,5 @@
 {
-    "name": "jkmdev/comment-buddy",
+    "name": "jkm96/comment-buddy",
     "description": "A reusable, Livewire-powered comment system for Laravel blogs.",
     "authors": [
         {
@@ -8,6 +8,7 @@
         }
     ],
     "keywords": [
+        "comment buddy",
         "laravel",
         "livewire",
         "comments",

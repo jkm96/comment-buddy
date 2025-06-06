@@ -11,7 +11,7 @@
                     @error('editingBody') <p class="text-red-500 text-xs">{{ $message }}</p> @enderror
 
                     <button type="submit"
-                            class="{{ get_theme_setting('theme_button_style') }} text-xs py-1 px-2">
+                            class="text-xs py-1 px-2">
                         <span wire:loading.remove> Save Changes</span>
                         <span wire:loading>
                        Loading...
