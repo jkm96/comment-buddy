@@ -1,4 +1,4 @@
-<div class="my-2">
+<div class="comment-section my-2">
     @if($isAuthenticated)
         <form wire:submit.prevent="submit" class="mb-4 text-left">
             <textarea wire:model.defer="body" rows="2" class="w-full p-2 text-sm bg-gray-700 border border-gray-500 rounded focus:outline-none

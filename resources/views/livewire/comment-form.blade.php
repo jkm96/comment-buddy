@@ -1,4 +1,4 @@
-<form wire:submit.prevent="submit" class="mt-2">
+<form wire:submit.prevent="submit" class="comment-form mt-2">
     <textarea
         wire:model.defer="body"
         rows="2"

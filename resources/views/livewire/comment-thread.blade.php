@@ -1,4 +1,4 @@
-<div class="ml-{{ $depth }} mt-2 relative text-left">
+<div class="comment-thread ml-{{ $depth }} mt-2 relative text-left">
     @if(!empty($comment))
         <div
             class="p-2 {{ $depth > 0 ? 'bg-gray-600' : 'bg-gray-700' }} shadow-md text-sm transition-all hover:bg-gray-600">

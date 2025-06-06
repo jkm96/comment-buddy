@@ -8,13 +8,24 @@
 
 ## Installation
 
-Install the package via Composer:
+1.In your Laravel project’s composer.json, add this:
+```php
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/jkm96/comment-buddy"
+    }
+]
+
+```
+
+2.Then run:
 
 ```bash
 composer require jkm96/comment-buddy
 ```
 
-Publish the configuration file:
+3.Publish the configuration file:
 
 ```bash
 php artisan vendor:publish --tag=comment-buddy-config
@@ -22,7 +33,18 @@ php artisan vendor:publish --tag=comment-buddy-config
 
 This command creates the configuration file at `config/comment-buddy.php`.
 
-Run the migrations to create the necessary database tables:
+4.Publish the views:
+
+```bash
+php artisan vendor:publish --tag=comment-buddy-views
+```
+
+This command will copy all your views into the user’s project under:
+```php
+resources/views/vendor/comment-buddy/
+```
+
+5.Run the migrations to create the necessary database tables:
 
 ```bash
 php artisan migrate
@@ -55,6 +77,13 @@ To include the comment system in a Blade view (e.g., on a post detail page), add
 ```
 
 Make sure your post model has an `id` and a relationship to comments.
+
+````php
+ public function comments()
+ {
+    return $this->hasMany(Comment::class)->whereNull('parent_id');
+ }
+````
 
 If `show_message` is enabled, listen for toast messages with Livewire:
 
