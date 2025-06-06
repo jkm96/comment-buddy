@@ -103,5 +103,8 @@ User authentication is required to post comments. If a user is not logged in, th
 **Note:** Guest commenting is not supported out of the box.
 
 ---
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 Feel free to customize and extend Comment Buddy to fit your project's needs!
