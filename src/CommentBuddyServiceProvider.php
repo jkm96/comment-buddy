@@ -25,7 +25,7 @@ class CommentBuddyServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'comment-buddy');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => App::configPath('views/vendor/comment-buddy'),
+            __DIR__.'/../resources/views' => App::resourcePath('views/vendor/comment-buddy'),
         ], 'comment-buddy-views');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
