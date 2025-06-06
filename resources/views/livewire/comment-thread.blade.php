@@ -1,7 +1,7 @@
 <div class="comment-thread ml-{{ $depth }} mt-2 relative text-left">
     @if(!empty($comment))
         <div
-            class="p-2 {{ $depth > 0 ? 'bg-gray-600' : 'bg-gray-700' }} shadow-md text-sm transition-all hover:bg-gray-600">
+            class="p-2 {{ $depth > 0 ? 'bg-gray-500' : 'bg-gray-600' }} shadow-md text-sm transition-all hover:bg-gray-500">
 
             @if($editingCommentId === $comment->id)
                 <form wire:submit.prevent="updateComment({{ $comment->id }})">
@@ -32,24 +32,24 @@
             @auth
                 <button
                     wire:click="setReplyingTo({{ $comment->id }})"
-                    class="text-xs text-blue-400 hover:underline mt-1">
+                    class="text-xs text-blue-400 hover:underline hover:cursor-pointer mt-1">
                     {{ $replyingTo === $comment->id ? 'Cancel' : 'Reply' }}
                 </button>
 
                 @if(auth()->id() === $comment->user_id)
                     <button wire:click="setEditingComment({{ $comment->id }})"
-                            class="text-xs text-blue-400 hover:underline mt-1">
+                            class="text-xs text-blue-400 hover:underline hover:cursor-pointer mt-1">
                         Edit
                     </button>
 
                     <button wire:click="deleteComment({{ $comment->id }})"
-                            class="text-xs text-red-400 hover:underline mt-1">
+                            class="text-xs text-red-400 hover:underline hover:cursor-pointer mt-1">
                         Delete
                     </button>
                 @endif
 
                 @if ($replyingTo === $comment->id)
-                    <livewire:blog.comment-form
+                    <livewire:comment-form
                         :postId="$comment->post_id"
                         :parentId="$comment->id"
                         wire:key="reply-form-{{ $comment->id }}"
@@ -63,7 +63,7 @@
 
         @if ($depth < $maxDepth)
             @foreach ($comment->replies as $child)
-                <livewire:blog.comment-thread
+                <livewire:comment-thread
                     :comment="$child"
                     :replyingTo="$replyingTo"
                     :depth="$depth + 1"
