@@ -1,0 +1,38 @@
+{
+    "name": "jkmdev/comment-buddy",
+    "description": "A reusable, Livewire-powered comment system for Laravel blogs.",
+    "authors": [
+        {
+            "name": "Joseph Maina",
+            "email": "jkm96.dev@gmail.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "livewire",
+        "comments",
+        "blog",
+        "comment system"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CommentBuddy\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CommentBuddy\\CommentBuddyServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "livewire/livewire": "^3.6"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
